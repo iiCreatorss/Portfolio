@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialNetwork| iiCreators</title>
+  <link rel="stylesheet" href="/Pages-Styles/style-page-SocialNetwork.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+</head>
+
+
+<body>
+  <div class="background-container"></div>
+
+  <main>
+
+    <section class="content-block">
+      <h1 class="section-title">Post per Social Network</h2>
+      <p>
+        Creazione di contenuti visivi accattivanti per Instagram, Facebook, LinkedIn e altri canali social.  
+        Progettati per catturare l’attenzione in pochi secondi, con copy e design perfettamente integrati.
+      </p>
+      <ul>
+        <li>🎨 Template personalizzati per il tuo brand</li>
+        <li>✍️ Caption persuasive e coinvolgenti</li>
+        <li>📆 Programmazione settimanale dei post</li>
+        <li>📊 Analisi delle performance</li>
+      </ul>
+
+    <div class="carousel-container">
+      <div class="carousel-section">
+        <!-- Card 1 -->
+        <div class="carousel-card">
+          <div class="carousel-wrapper">
+            <button class="carousel-arrow left">&#10094;</button>
+            <div class="carousel-images">
+              <img src="/images/CONTENUTI PAGES/POST 3.png" alt="Post 1" class="active" onclick="openModal(this)">
+              <img src="/images/CONTENUTI PAGES/POST 2.png" alt="Post 2" onclick="openModal(this)">
+              <img src="/images/CONTENUTI PAGES/POST 1.jpg" alt="Post 3" onclick="openModal(this)">
+            </div>
+            <button class="carousel-arrow right">&#10095;</button>
+          </div>
+          <h3>Creazione post</h3>
+          <p>Creo contenuto visivo e testuale coerente con il tuo brand. Ogni post è studiato per catturare l'attenzione in pochi secondi.</p>
+        </div>
+      
+        <!-- Card 2 -->
+        <div class="carousel-card">
+          <div class="carousel-wrapper">
+            <button class="carousel-arrow left">&#10094;</button>
+            <div class="carousel-images">
+              <img src="/images/CONTENUTI PAGES/Feed pulito.jpg" alt="Post 1" class="active" onclick="openModal(this)">
+            </div>
+            <button class="carousel-arrow right">&#10095;</button>
+          </div>
+          <h3>Organizzazione feed</h3>
+          <p>Studio l'ordine e lo stile del profilo per mantenere coerenza estetica e visiva. Il risultato? Un feed armonico e riconoscibile.</p>
+        </div>
+      
+        <!-- Card 3 -->
+        <div class="carousel-card">
+          <div class="carousel-wrapper">
+            <button class="carousel-arrow left">&#10094;</button>
+            <div class="carousel-images">
+              <img src="/images/CONTENUTI PAGES/Risultati mindsetora1.jpg" alt="Post 1" class="active" onclick="openModal(this)">
+              <img src="/images/CONTENUTI PAGES/Risultati mindsetora2.jpg" alt="Post 2" onclick="openModal(this)">
+            </div>
+            <button class="carousel-arrow right">&#10095;</button>
+          </div>
+          <h3>Risultati</h3>
+          <p>Analizzo le performance dei contenuti per migliorare l'engagement e ottimizzare la strategia nel tempo.</p>
+        </div>
+      </div>
+      
+      <!-- Modal per l'immagine ingrandita -->
+      <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+      </div>
+    </div>
+      
+     
+    </section>
+
+
+    <div class="content-block">
+      <h1 class="section-title">Gestione contenuti</h2>
+      <p>
+        Un piano editoriale strategico per mantenere la tua comunicazione sempre attiva e coerente.
+        Dalla redazione alla pubblicazione, gestisco i tuoi contenuti con visione e precisione.
+      </p>
+      <ul>
+        <li>🧠 Strategia di contenuti su misura</li>
+        <li>📝 Redazione di articoli, post, testi per pagine web</li>
+        <li>📅 Calendario editoriale mensile</li>
+        <li>🔁 Coordinamento e aggiornamento continuo</li>
+      </ul>
+      <section class="pricing-section">
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>Base</h3>
+      <p>Ideale per chi inizia a costruire la propria presenza online.</p>
+      <ul>
+        <li>2 post a settimana</li>
+        <li>1 video a settimana</li>
+        <li>4 storie a settimana</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <h3>Avanzato</h3>
+      <p>Per chi vuole una gestione più attiva e professionale.</p>
+      <ul>
+        <li>4 post a settimana</li>
+        <li>2 video a settimana</li>
+        <li>Copywriting ottimizzato SEO</li> 
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <h3>Personalizzato</h3>
+      <p>Strategia completa per una comunicazione a 360°.</p>
+      <ul>
+        <li>Contattami per una gestione personalizzata</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+
+
+
+    <!-- FAB MENU' -->
+    <div class="fab-container">
+      <button class="fab-button" id="fab-main">+</button>
+      <div class="fab-menu" id="fab-menu">
+        <a href="/index.html" class="fab-item" title="Home">🏠</a>
+        <a href="https://wa.me/+393884771675" target="_blank" class="fab-item" title="Chat WhatsApp">💬</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Il Tuo Nome. Tutti i diritti riservati.</p>
+  </footer>
+
+  
+<!-- MODAL FRECCE + APERTURA E CHIUSURA CAROSELLO -->
+
+<script>
+  // Inizializza i caroselli
+  document.querySelectorAll('.carousel-card').forEach(card => {
+    const images = card.querySelectorAll('.carousel-images img');
+    const leftArrow = card.querySelector('.carousel-arrow.left');
+    const rightArrow = card.querySelector('.carousel-arrow.right');
+    let currentIndex = 0;
+    
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+        // Aggiungiamo un attributo data-index per identificare l'immagine
+        img.dataset.index = i;
+      });
+      currentIndex = index;
+    }
+    
+    function nextImage() {
+      const newIndex = (currentIndex + 1) % images.length;
+      showImage(newIndex);
+    }
+    
+    function prevImage() {
+      const newIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(newIndex);
+    }
+    
+    leftArrow.addEventListener('click', prevImage);
+    rightArrow.addEventListener('click', nextImage);
+    
+    // Mostra la prima immagine
+    showImage(0);
+  });
+  
+  // Funzioni per il modal
+  function openModal(imgElement) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    // Troviamo l'immagine attualmente visibile (quella con classe 'active')
+    const activeImg = imgElement.parentElement.querySelector('img.active');
+    
+    if (activeImg) {
+      modal.style.display = 'flex';
+      modalImg.src = activeImg.src;
+      modalImg.alt = activeImg.alt;
+    }
+  }
+  
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+  
+  window.onclick = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+
+
+
+
+
+  <!-- SCRIPT PULSANTE MENU'-->
+  <script>
+    const fabMain = document.getElementById('fab-main');
+    const fabMenu = document.getElementById('fab-menu');
+
+    fabMain.addEventListener('click', () => {
+      fabMain.classList.toggle('open');
+      fabMenu.classList.toggle('show');
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+
+</html>

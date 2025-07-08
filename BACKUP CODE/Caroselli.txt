@@ -1,0 +1,822 @@
+<div class="section-wrapper">
+    <section class="projects" id="projects-section">
+        <div class="projects-contents">
+          <h1 class="youtube-cover"><span>Youtube</span> Cover</h1>
+      
+          <!-- COVER YOUTUBE -->
+          <div class="container">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+      
+            <div class="cards" role="region" aria-label="Galleria cover YouTube">
+              <!-- Card Immagini -->
+              <label class="card" for="item-1" id="song-1">
+                <img draggable="false" src="./images/COVER/COVER VIDEO (2).jpg" alt="Cover 1" loading="lazy">
+              </label>
+              <label class="card" for="item-2" id="song-2">
+                <img draggable="false" src="./images/COVER/2-min.png" alt="Cover 2" loading="lazy">
+              </label>
+              <label class="card" for="item-3" id="song-3">
+                <img draggable="false" src="./images/COVER/HOW to make a Lil Baby TYPE BEAT.png" alt="Cover 3" loading="lazy">
+              </label>
+      
+              <!-- Frecce Integrate -->
+              <div class="arrows">
+                <button id="prev" aria-label="Previous image">&#10094;</button>
+                <button id="next" aria-label="Next image">&#10095;</button>
+              </div>
+      
+              <!-- Pulsante Details Integrato -->
+              <div class="details-button">
+                <button class="btn" aria-label="View details">Details</button>
+              </div>
+            </div>
+          </div>
+      </section>
+
+            
+            
+            <!-- MODAL PER IMMAGINI CAROSELLO -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImg">
+            </div>
+
+            <!-- MODAL PER PULSANTE DETAILS -->
+            <div id="detailsModal" class="modal text-modal">
+                <span class="close">&times;</span>
+                <div class="modal-text-content">
+                  <h3>YouTube Cover</h3>
+                  <!-- Inserisci qui il tuo testo -->
+                  <p>Each YouTube cover I design is a strategic blend of visual impact and clear communication. 
+                    My goal is to grab attention in just a few seconds, instantly conveying the essence of the video and encouraging viewers to click. 
+                    I work with creators across various industries — from entertainment to education — developing a visual style that aligns with their brand and performs well within the platform’s algorithm. 
+                    Every project is the result of close collaboration, where design, color, and typography come together to turn a thumbnail into a promise.</p>
+                </div>
+              </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PROJECT */
+
+
+.projects {
+  position: relative; /* Mantenere relativo per il posizionamento interno */
+  display: flex; /* Cambia da flex a block per evitare disallineamenti */
+  width: 100%;
+  height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+  .background-projects {
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh; /* Garantisce che l'immagine di sfondo copra tutto lo schermo */
+  }
+}
+
+
+.projects{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.projects-contents .youtube-cover{
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+input[type=radio] {
+    display: none;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    position: relative; /* Contesto per posizionamento assoluto */
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+  }
+  
+  .cards {
+    position: relative;
+    width: 200%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0;
+  }
+  
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: pointer;
+    line-height: 0;
+    margin-bottom: -4px;
+  }
+  
+  .card img {
+    width: 90%;
+    height: auto;
+    max-height: none;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: box-shadow 0.3s ease;
+    display: block; /* Rimuove spazio sotto l'immagine */
+  }
+
+  .btn:focus {
+    outline: 2px solid #A1E3F9;
+}
+  
+  #item-1:checked ~ .cards #song-3,
+  #item-2:checked ~ .cards #song-1,
+  #item-3:checked ~ .cards #song-2 {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #song-2,
+  #item-2:checked ~ .cards #song-3,
+  #item-3:checked ~ .cards #song-1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #song-1,
+  #item-2:checked ~ .cards #song-2,
+  #item-3:checked ~ .cards #song-3 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  #item-1:checked ~ .cards #song-1 img,
+  #item-2:checked ~ .cards #song-2 img,
+  #item-3:checked ~ .cards #song-3 img {
+    box-shadow: 0 0 15px rgba(81, 81, 81, 0.47);
+  }
+  
+  /* ✅ Media query */
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .cards {
+        width: 90%;
+        height: 370px;
+
+    }
+    
+    .card img {
+        width: 85%;
+        border-radius: 25px;
+    }
+}
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0.5rem;
+      gap: 0.5rem;
+  }
+
+    .cards {
+        width: 100%;
+        height: 350px; /* Altezza fissa per mobile */
+    }
+
+    .card img {
+      width: 95%; /* Ancora più grande su mobile */
+      max-height: 55vh; /* Altezza massima relativa */
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+    #item-1:checked ~ .cards #song-3,
+    #item-2:checked ~ .cards #song-1,
+    #item-3:checked ~ .cards #song-2,
+    #item-1:checked ~ .cards #song-2,
+    #item-2:checked ~ .cards #song-3,
+    #item-3:checked ~ .cards #song-1 {
+      transform: translateX(0) scale(0.9);
+      opacity: 0.6;
+    }
+  
+    #item-1:checked ~ .cards #song-1,
+    #item-2:checked ~ .cards #song-2,
+    #item-3:checked ~ .cards #song-3 {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  
+    .card {
+        padding: 0.3rem;
+      }
+    
+      .card img {
+        max-height: 350px; /* 🔽 Un po' più piccolo su mobile */
+      }
+    }
+
+/* Media query aggiuntiva per schermi molto piccoli */
+@media (max-width: 480px) {
+  .cards {
+      height: 220px;
+  }
+  
+  .card img {
+      width: 98%;
+      max-height: 45vh;
+      border-radius: 15px;
+  }
+}
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s ease-out;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      opacity: 1;
+  }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      width: auto; /* Rimuovi il limite alla larghezza */
+      height: auto; /* Rimuovi il limite all'altezza */
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      object-fit: contain;
+      animation: zoomIn 0.3s ease-out;
+
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.95); }
+      to { transform: scale(1); }
+  }
+    
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* Fix per evitare lo "scatto" quando si blocca lo scroll */
+  html.no-scroll {
+  margin-right: calc(-1 * (100vw - 100%));
+  }
+    
+    .close:hover {
+      color: #bbb;
+    }
+    
+
+
+
+/* NUOVO STILE PER FRECCE INTEGRATE */
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 2rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.arrows button {
+    /* Stile base */
+    display: flex; /* AGGIUNTO - fondamentale */
+    align-items: center; /* AGGIUNTO */
+    justify-content: center; /* AGGIUNTO */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #A1E3F9;
+    color: #A1E3F9;
+    font-size: 2.2rem;
+    cursor: pointer;
+    pointer-events: auto;
+    
+    /* Effetti */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(161, 227, 249, 0.5);
+    backdrop-filter: blur(5px);
+    
+    /* Reset stili browser */
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Versione semplificata dell'effetto hover */
+.arrows button:hover {
+    transform: scale(1.1);
+    background: rgba(161, 227, 249, 0.2);
+    box-shadow: 0 0 25px rgba(161, 227, 249, 0.8);
+}
+
+
+/* PULSANTE DETAILS PREMIUM */
+.details-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: auto;
+  perspective: 500px;
+}
+
+.details-button .btn {
+  position: relative;
+  padding: 1rem 3rem;
+  background: linear-gradient(135deg, 
+             rgba(0, 0, 0, 0.8) 0%, 
+             rgba(20, 30, 50, 0.9) 100%);
+  border: 2px solid #A1E3F9;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  color: #A1E3F9;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(161, 227, 249, 0.3),
+    inset 0 0 20px rgba(161, 227, 249, 0.2);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Effetto bordo neon FISSO */
+.details-button .btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, 
+             rgba(161, 227, 249, 0.8) 0%,
+             rgba(161, 227, 249, 0.2) 50%,
+             transparent 100%);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* Effetto luce interna (senza movimento) */
+.details-button .btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, 
+             rgba(161, 227, 249, 0.4) 0%, 
+             transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover con effetti premium ma senza spostamento */
+.details-button .btn:hover {
+  color: #000;
+  background: linear-gradient(135deg, 
+             #A1E3F9 0%, 
+             rgba(161, 227, 249, 0.9) 100%);
+  box-shadow:
+    0 6px 40px rgba(161, 227, 249, 0.7),
+    inset 0 0 25px rgba(255, 255, 255, 0.4);
+  letter-spacing: 1.5px;
+}
+
+.details-button .btn:hover::after {
+  opacity: 0.6;
+}
+
+/* Feedback al click elegante */
+.details-button .btn:active {
+  transition: all 0.2s ease;
+  box-shadow:
+    0 3px 20px rgba(161, 227, 249, 0.6),
+    inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* MEDIA QUERY MOBILE */
+@media (max-width: 768px) {
+  .details-button {
+    bottom: 20px;
+  }
+  
+  .details-button .btn {
+    padding: 0.8rem 2.2rem;
+    font-size: 1.3rem;
+    backdrop-filter: blur(5px);
+  }
+}
+/* MEDIA QUERY PER MOBILE */
+@media (max-width: 768px) {
+  .arrows {
+      padding: 0 1rem;
+  }
+  
+  .arrows button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+  }
+  
+  .details-button {
+      bottom: 20px;
+  }
+  
+  .details-button .btn {
+      padding: 0.6rem 2rem;
+      font-size: 1.2rem;
+  }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 15px rgba(161, 227, 249, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(161, 227, 249, 0.9); }
+  100% { box-shadow: 0 0 15px rgba(161, 227, 249, 0.5); }
+}
+
+.details-button .btn:hover {
+  animation: pulse-glow 2s infinite;
+}
+
+/* MEDIA QUERY PER DESKTOP GRANDE */
+@media (min-width: 1600px) {
+  .arrows {
+      padding: 0 4rem;
+  }
+  
+  .arrows button {
+      width: 60px;
+      height: 60px;
+      font-size: 2.5rem;
+  }
+}
+
+.arrows button:active {
+  transform: scale(0.95);
+  background-color: #A1E3F9;
+}
+
+
+
+
+
+
+/* MODAL PER BOTTONE DETAIL */
+
+.text-modal .modal-text-content {
+  background-color: rgba(54, 116, 181, 0.95);
+  margin: auto;
+  padding: 50px; /* Aumentato da 40px */
+  border-radius: 25px; /* Leggermente più arrotondato */
+  width: 85%; /* Aumentato da 80% */
+  max-width: 800px; /* Aumentato da 700px */
+  max-height: 85vh; /* Aumentato da 80vh */
+  overflow-y: auto;
+  border: 2px solid #A1E3F9;
+  box-shadow: 0 0 35px rgba(161, 227, 249, 0.6); /* Effetto luce più ampio */
+  color: white;
+  animation: zoomIn 0.3s ease-out;
+}
+
+.text-modal .modal-text-content h3 {
+  color: #A1E3F9;
+  font-size: 2.2rem; /* Aumentato da 2rem */
+  margin-bottom: 25px; /* Aumentato da 20px */
+  border-bottom: 1px solid #A1E3F9;
+  padding-bottom: 12px; /* Aumentato da 10px */
+}
+
+.text-modal .modal-text-content p,
+.text-modal .modal-text-content li {
+  line-height: 1.7; /* Aumentato da 1.6 */
+  margin-bottom: 18px; /* Aumentato da 15px */
+  font-size: 1.1em; /* Leggermente più grande */
+}
+
+.text-modal .modal-text-content ul {
+  padding-left: 25px; /* Aumentato da 20px */
+}
+
+/* Mobile - aggiustamenti proporzionali */
+@media (max-width: 768px) {
+  .text-modal .modal-text-content {
+    width: 92%; /* Aumentato da 90% */
+    padding: 25px; /* Aumentato da 20px */
+    max-height: 88vh; /* Aumentato proporzionalmente */
+    border-radius: 20px; /* Leggermente meno arrotondato su mobile */
+  }
+  
+  .text-modal .modal-text-content h3 {
+    font-size: 2rem; /* Riduzione minore su mobile */
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-modal .modal-text-content {
+    width: 88%;
+    max-width: 850px;
+  }
+}
+
+/* Ottimizzazione per schermi molto grandi */
+@media (min-width: 1600px) {
+  .text-modal .modal-text-content {
+    max-width: 900px;
+    padding: 60px;
+  }
+}
+
+
+
+
+// CAROSELLO YOUTUBE VIDEOS
+
+const radios = document.querySelectorAll('input[name="slider"]');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+let current = 0;
+
+// Funzione per aggiornare lo slider
+function updateSlider(index) {
+  radios[index].checked = true;
+}
+
+// Funzione per gestire il click del bottone "prev"
+prevBtn.addEventListener('click', () => {
+  current = (current - 1 + radios.length) % radios.length; // Sicuro che torni indietro correttamente
+  updateSlider(current);
+});
+
+// Funzione per gestire il click del bottone "next"
+nextBtn.addEventListener('click', () => {
+  current = (current + 1) % radios.length; // Torna all'inizio quando si arriva alla fine
+  updateSlider(current);
+});
+
+// Gestione della selezione del radio (quando cambia)
+radios.forEach((radio, index) => {
+  radio.addEventListener('change', () => {
+    current = index;
+  });
+});
+
+// Aggiunta della classe 'blue' al body quando si cambia il radio
+$('input').on('change', function () {
+  $('body').toggleClass('blue');
+});
+
+
+
+
+
+// APERTURA IMMAGINE CAROSELLO (Modal)
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementi comuni
+  const modals = {
+    image: document.getElementById("imageModal"),
+    details: document.getElementById("detailsModal")
+  };
+  const modalImg = document.getElementById("modalImg");
+  const closeBtns = document.querySelectorAll(".close");
+  let scrollPosition = 0;
+
+  // Funzioni per gestione scroll
+  function lockScroll() {
+    scrollPosition = window.pageYOffset;
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.style.cssText = `
+      position: fixed;
+      top: -${scrollPosition}px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+    `;
+  }
+
+  function unlockScroll() {
+    document.body.style.cssText = '';
+    window.scrollTo(0, scrollPosition);
+    document.documentElement.style.scrollBehavior = '';
+  }
+
+  // Funzione per aprire un modal specifico
+  function openModal(modalType, content) {
+    if (modalType === 'image') {
+      modalImg.src = content.src;
+      modalImg.alt = content.alt || 'Immagine ingrandita';
+    }
+    
+    scrollToProjects(() => {
+      modals[modalType].style.display = "flex";
+      setTimeout(() => modals[modalType].classList.add('active'), 10);
+      lockScroll();
+    });
+  }
+
+  // Funzione per chiudere i modal
+  function closeModals() {
+    Object.values(modals).forEach(modal => {
+      modal.classList.remove('active');
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
+    });
+    unlockScroll();
+  }
+
+  // Scroll alla sezione Projects
+  function scrollToProjects(callback) {
+    const projectsSection = document.getElementById('projects-section');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(callback, 500);
+    } else {
+      callback();
+    }
+  }
+
+  // Event listeners
+  // Apertura modal immagini
+  document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", function(e) {
+      if (this.complete && this.naturalWidth > 0) {
+        const parentCard = this.closest(".card");
+        const selectedCardId = getSelectedCardId();
+        
+        if (parentCard && parentCard.id === selectedCardId) {
+          e.preventDefault();
+          openModal('image', {
+            src: this.src,
+            alt: this.alt
+          });
+        }
+      }
+    });
+  });
+
+  // Apertura modal details
+  document.querySelector(".details-button .btn").addEventListener("click", function(e) {
+    e.preventDefault();
+    openModal('details');
+  });
+
+  // Chiusura modals
+  closeBtns.forEach(btn => {
+    btn.addEventListener("click", closeModals);
+  });
+
+  // Chiudi cliccando fuori
+  Object.values(modals).forEach(modal => {
+    modal.addEventListener("click", function(e) {
+      if (e.target === this) {
+        closeModals();
+      }
+    });
+  });
+
+  // Chiudi con ESC
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && Object.values(modals).some(m => m.style.display === "flex")) {
+      closeModals();
+    }
+  });
+
+  // Funzione helper
+  function getSelectedCardId() {
+    const checkedRadio = document.querySelector('input[name="slider"]:checked');
+    return checkedRadio ? checkedRadio.id.replace("item", "song") : null;
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

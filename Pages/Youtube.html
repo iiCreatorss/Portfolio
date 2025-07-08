@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/Pages-Styles/style-page-Youtube.css">
+  <title>Contenuti YouTube| iiCreators</title>
+</head>
+
+
+<body>
+  
+  <div class="background-container"></div>
+
+
+  <main>
+    <section class="video-editing-section">
+      <h1 class="editing-video">Editing Video</h1>
+      <p>
+Realizzo montaggi professionali ottimizzati per YouTube, curando ritmo, tagli, effetti visivi, grafiche, sottotitoli, transizioni e audio. 
+Ogni video mantiene lo stile del tuo canale e favorisce la fidelizzazione.      
+      </p>
+
+    </section>
+
+    <section class="cover-youtube-section">
+      <h1 class="youtube-cover">YouTube Cover</h1>
+      <p>Progetto copertine YouTube accattivanti e ottimizzate per il click, efficaci su desktop e mobile. 
+        Ogni cover comunica chiaramente il contenuto del video, con colori, testi e layout pensati per aumentare il CTR.
+      </p>
+      <div class="carousel">
+        <div class="carousel-track">
+          <a href="#img1"><img src="/images/COVER/2-min.png" alt="Copertina 1" draggable="false"></a>
+          <a href="#img2"><img src="/images/COVER/COVER VIDEO (2).jpg" alt="Copertina 2" draggable="false"></a>
+          <a href="#img3"><img src="/images/COVER/every langage explained cover 2.png" alt="Copertina 3" draggable="false"></a>
+          <a href="#img4"><img src="/images/COVER/HOW to make a Lil Baby TYPE BEAT.png" alt="Copertina 4" draggable="false"></a>
+      
+          <!-- DUPLICATI PER LOOP -->
+          <a href="#img1"><img src="/images/COVER/2-min.png" alt="Copertina 1" draggable="false"></a>
+          <a href="#img2"><img src="/images/COVER/COVER VIDEO (2).jpg" alt="Copertina 2" draggable="false"></a>
+          <a href="#img3"><img src="/images/COVER/every langage explained cover 2.png" alt="Copertina 3" draggable="false"></a>
+          <a href="#img4"><img src="/images/COVER/HOW to make a Lil Baby TYPE BEAT.png" alt="Copertina 4" draggable="false"></a>
+        </div>
+      </div>
+      
+      <!-- Lightbox (immagini ingrandite) -->
+      <div class="lightbox" id="img1">
+        <a href="#"><span>&times;</span></a>
+        <img src="/images/COVER/2-min.png" alt="Copertina ingrandita 1">
+      </div>
+      
+      <div class="lightbox" id="img2">
+        <a href="#"><span>&times;</span></a>
+        <img src="/images/COVER/COVER VIDEO (2).jpg" alt="Copertina ingrandita 2">
+      </div>
+      
+      <div class="lightbox" id="img3">
+        <a href="#"><span>&times;</span></a>
+        <img src="/images/COVER/every langage explained cover 2.png" alt="Copertina ingrandita 3">
+      </div>
+      
+      <div class="lightbox" id="img4">
+        <a href="#"><span>&times;</span></a>
+        <img src="/images/COVER/HOW to make a Lil Baby TYPE BEAT.png" alt="Copertina ingrandita 4">
+      </div>
+      
+
+    </section>
+
+
+
+<!-- HTML PULSANTE -->
+
+    <div class="fab-container">
+      <button class="fab-button" id="fab-main">+</button>
+      <div class="fab-menu" id="fab-menu">
+        <a href="/index.html" class="fab-item" title="Home">
+          🏠
+        </a>
+        <a href="https://wa.me/+393884771675" target="_blank" class="fab-item" title="Chat WhatsApp">
+          💬
+        </a>
+      </div>
+    </div>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 iiCreators. Tutti i diritti riservati.</p>
+  </footer>
+
+
+  <!-- SCRIPT PULSANTE -->
+
+  <script>
+    const fabMain = document.getElementById('fab-main');
+    const fabMenu = document.getElementById('fab-menu');
+  
+    fabMain.addEventListener('click', () => {
+      fabMain.classList.toggle('open');
+      fabMenu.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

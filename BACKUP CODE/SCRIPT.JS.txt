@@ -1,0 +1,271 @@
+// CAROSELLO YOUTUBE VIDEOS
+
+const radios = document.querySelectorAll('input[name="slider"]');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+let current = 0;
+
+// Funzione per aggiornare lo slider
+function updateSlider(index) {
+  radios[index].checked = true;
+}
+
+// Funzione per gestire il click del bottone "prev"
+prevBtn.addEventListener('click', () => {
+  current = (current - 1 + radios.length) % radios.length; // Sicuro che torni indietro correttamente
+  updateSlider(current);
+});
+
+// Funzione per gestire il click del bottone "next"
+nextBtn.addEventListener('click', () => {
+  current = (current + 1) % radios.length; // Torna all'inizio quando si arriva alla fine
+  updateSlider(current);
+});
+
+// Gestione della selezione del radio (quando cambia)
+radios.forEach((radio, index) => {
+  radio.addEventListener('change', () => {
+    current = index;
+  });
+});
+
+// Aggiunta della classe 'blue' al body quando si cambia il radio
+$('input').on('change', function () {
+  $('body').toggleClass('blue');
+});
+
+
+
+
+// FUNZIONE EMAIL CHE APPARE
+
+document.getElementById('mail-button').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  const container = document.getElementById('email-container');
+  const emailText = document.getElementById('email-text');
+  const feedback = document.querySelector('.copy-feedback');
+  
+  // Mostra/nascondi l'email
+  container.classList.toggle('visible');
+  
+  if (container.classList.contains('visible')) {
+      emailText.textContent = 'info.iicreators@gmail.com'; // Sostituisci con la tua email
+      
+      // Copia automatica negli appunti
+      navigator.clipboard.writeText(emailText.textContent)
+          .then(() => {
+              feedback.style.display = 'inline-block';
+              setTimeout(() => {
+                  feedback.style.display = 'none';
+              }, 2000);
+          })
+          .catch(err => {
+              console.error("Errore durante la copia:", err);
+          });
+  }
+});
+
+
+
+
+
+
+
+// APERTURA IMMAGINE CAROSELLO (Modal)
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementi comuni
+  const modals = {
+    image: document.getElementById("imageModal"),
+    details: document.getElementById("detailsModal")
+  };
+  const modalImg = document.getElementById("modalImg");
+  const closeBtns = document.querySelectorAll(".close");
+  let scrollPosition = 0;
+
+  // Funzioni per gestione scroll
+  function lockScroll() {
+    scrollPosition = window.pageYOffset;
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.style.cssText = `
+      position: fixed;
+      top: -${scrollPosition}px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+    `;
+  }
+
+  function unlockScroll() {
+    document.body.style.cssText = '';
+    window.scrollTo(0, scrollPosition);
+    document.documentElement.style.scrollBehavior = '';
+  }
+
+  // Funzione per aprire un modal specifico
+  function openModal(modalType, content) {
+    if (modalType === 'image') {
+      modalImg.src = content.src;
+      modalImg.alt = content.alt || 'Immagine ingrandita';
+    }
+    
+    scrollToProjects(() => {
+      modals[modalType].style.display = "flex";
+      setTimeout(() => modals[modalType].classList.add('active'), 10);
+      lockScroll();
+    });
+  }
+
+  // Funzione per chiudere i modal
+  function closeModals() {
+    Object.values(modals).forEach(modal => {
+      modal.classList.remove('active');
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
+    });
+    unlockScroll();
+  }
+
+  // Scroll alla sezione Projects
+  function scrollToProjects(callback) {
+    const projectsSection = document.getElementById('projects-section');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(callback, 500);
+    } else {
+      callback();
+    }
+  }
+
+  // Event listeners
+  // Apertura modal immagini
+  document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", function(e) {
+      if (this.complete && this.naturalWidth > 0) {
+        const parentCard = this.closest(".card");
+        const selectedCardId = getSelectedCardId();
+        
+        if (parentCard && parentCard.id === selectedCardId) {
+          e.preventDefault();
+          openModal('image', {
+            src: this.src,
+            alt: this.alt
+          });
+        }
+      }
+    });
+  });
+
+  // Apertura modal details
+  document.querySelector(".details-button .btn").addEventListener("click", function(e) {
+    e.preventDefault();
+    openModal('details');
+  });
+
+  // Chiusura modals
+  closeBtns.forEach(btn => {
+    btn.addEventListener("click", closeModals);
+  });
+
+  // Chiudi cliccando fuori
+  Object.values(modals).forEach(modal => {
+    modal.addEventListener("click", function(e) {
+      if (e.target === this) {
+        closeModals();
+      }
+    });
+  });
+
+  // Chiudi con ESC
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && Object.values(modals).some(m => m.style.display === "flex")) {
+      closeModals();
+    }
+  });
+
+  // Funzione helper
+  function getSelectedCardId() {
+    const checkedRadio = document.querySelector('input[name="slider"]:checked');
+    return checkedRadio ? checkedRadio.id.replace("item", "song") : null;
+  }
+});
+
+
+
+
+
+
+
+
+
+
+//SFONDI CHE CAMBIANO
+
+document.addEventListener("DOMContentLoaded", function () {
+  const homeSection = document.getElementById('home-section');
+  const projectsSection = document.getElementById('projects-section');
+  const infoSection = document.getElementById('info-section');
+  const homeBg = document.querySelector('.background-home');
+  const projectsBg = document.querySelector('.background-projects');
+
+  let transitionInProgress = false;
+
+  // Funzione che gestisce il cambio degli sfondi
+  function startTransition(fromBg, toBg) {
+    if (transitionInProgress) return; // Evita transizioni multiple contemporaneamente
+
+    transitionInProgress = true;
+    console.log('Cambio sfondo da:', fromBg.classList, 'a', toBg.classList);
+
+    // Riduci il tempo di transizione per renderla più veloce
+    setTimeout(() => {
+      transitionInProgress = false;
+    }, 600);  // Tempo di transizione più rapido (600ms)
+
+    fromBg.classList.remove('active');
+    toBg.classList.add('active');
+  }
+
+  // Configura l'IntersectionObserver per rilevare la visibilità delle sezioni
+  const observerOptions = {
+    root: null, // root è la viewport
+    rootMargin: '0px',
+    threshold: 0.3  // Rileva quando almeno il 30% della sezione è visibile
+  };
+
+  // Callback dell'observer
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const target = entry.target;
+      const isVisible = entry.isIntersecting;
+
+      console.log(target.id, 'è visibile:', isVisible);
+
+      // Se la sezione "Home" è visibile
+      if (target === homeSection && isVisible && !transitionInProgress) {
+        startTransition(projectsBg, homeBg);
+      }
+
+      // Se la sezione "Projects" è visibile
+      if (target === projectsSection && isVisible && !transitionInProgress) {
+        startTransition(homeBg, projectsBg);
+      }
+      // Sezione Info: nessuna transizione
+      // Lasciala stare e manterrà lo sfondo della sezione "projects"
+    });
+  }, observerOptions);
+
+  // Osserva le sezioni
+  sectionObserver.observe(homeSection);
+  sectionObserver.observe(projectsSection);
+  sectionObserver.observe(infoSection);
+
+  // Inizializza lo sfondo "Home" come attivo
+  homeBg.classList.add('active');
+});
+
+
+

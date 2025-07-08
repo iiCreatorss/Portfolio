@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.css">
+    <title>iiCreators</title>
+</head>
+<body>
+
+
+
+    <!-- Unico background container -->
+    <div class="background-container">
+      <div class="background-section background-home active"></div>
+      <div class="background-section background-projects"></div>
+    </div>
+
+    
+    <!-- HOME -->
+    <section class="home" id="home-section">
+        <div class="home-img">
+            <img src="./images/iiCreators home  img.jpg" draggable="false" alt="immagine profilo" loading="lazy">
+        </div>
+        <div class="home-content">
+            <h1 draggable="false">Hi, It's <span draggable="false">iiCreators</span></h1>
+            <h3 class="typing-text" draggable="false">I'm a <span></span></h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/iicreators/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="btn" id="mail-button">Mail</a>
+                    <!-- Nuovo contenitore per l'email sotto i bottoni -->
+                <div class="email-container" id="email-container">
+                    <span class="email-text" id="email-text"></span>
+                    <span class="copy-feedback">✔ Copiato!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- CHI SONO  -->
+  <div class="info" id="info-section">
+    <div class="info-container">
+      <div class="info-content">
+        <h2 class="info-title">Chi sono io?</h2>
+        <div class="info-flex-container">
+          <div class="info-text-container">
+            <p class="info-description">
+              Ciao! Sono <span class="highlighted-name">Francesco</span>, un appassionato di tecnologia, design e innovazione. Amo risolvere problemi e creare soluzioni che possano fare la differenza. Nel mio lavoro unisco creatività e logica per sviluppare esperienze uniche e funzionali.
+            </p>
+        <div class="profile-image-container">
+          <img src="./images/iiCreators WHO.png" alt="Francesco" loading="lazy">
+        </div>
+            <p class="info-bio">
+              Da quando ho iniziato a esplorare il mondo della tecnologia, sono stato sempre affascinato dalla capacità di trasformare idee in realtà. La mia esperienza va dallo sviluppo web al design UI/UX, passando per la gestione di progetti. Se desideri sapere di più su di me o lavorare insieme, non esitare a contattarmi!
+            </p>
+          </div>
+        </div>
+        
+        <!-- TOOLS INLINE -->
+        <div class="tools-inline">
+          <h2 class="tools-inline-title">I miei strumenti preferiti</h2>
+          <div class="tools-inline-container">
+            <div class="tool-inline">
+              <img src="./images/TOOLS/Photoshop_CC_icon.png" alt="Photoshop" loading="lazy">
+              <span class="tool-name">Photoshop</span>
+            </div>
+            <div class="tool-inline">
+              <img src="./images/TOOLS/capcupt.png" alt="CapCut" loading="lazy">
+              <span class="tool-name">CapCut</span>
+            </div>
+            <div class="tool-inline">
+              <img src="./images/TOOLS/visual-studio-code.png" alt="VSCode" loading="lazy">
+              <span class="tool-name">VSCode</span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="info-cta">
+          <a href="https://wa.me/+393884771675" class="cta-button" target="_blank" rel="noopener noreferrer">
+            Contattami
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- SEZIONE SERVICES -->
+
+<div class="services-container" id="services">
+  <div class="services-intro">
+    <h3 class="section-title">In cosa sono <span>Specializzato?</span></h3>
+  </div>
+
+  <div class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <div class="service-icon">🎯</div>
+      <h4>Contenuti UGC Autentici</h4>
+      <p>Usufruisci della nostra linea di UGC di diverse nicchie! Dalla casa alla beauty, fino al fashion. Scegli ciò che meglio si adatta alle tue esigenze.</p>
+      <div class="service-hover-effect"></div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <div class="service-icon">✍️</div>
+      <h4>Script Personalizzati</h4>
+      <p>Copywriting e Storytelling su misura per il tuo brand. Trasformiamo i tuoi valori in narrazioni coinvolgenti.</p>
+      <div class="service-hover-effect"></div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <div class="service-icon">🎬</div>
+      <h4>Editing Professionale</h4>
+      <p>Montaggio video avanzato con effetti professionali. Ogni clip viene perfezionata per massimizzare l'impatto.</p>
+      <div class="service-hover-effect"></div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card">
+      <div class="service-number">04</div>
+      <div class="service-icon">🔄</div>
+      <h4>Gestione a 360°</h4>
+      <p>Servizio completo dalla A alla Z: coordinamento creator, produzione contenuti e delivery finale.</p>
+      <div class="service-hover-effect"></div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-card">
+      <div class="service-number">05</div>
+      <div class="service-icon">📅</div>
+      <h4>Calendario Eventi</h4>
+      <p>Pianificazione strategica per eventi e festività. Contenuti tempestivi e rilevanti per ogni occasione.</p>
+      <div class="service-hover-effect"></div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card">
+      <div class="service-number">06</div>
+      <div class="service-icon">✨</div>
+      <h4>Ottimizzazioni</h4>
+      <p>Analisi dati e rielaborazione dei contenuti vincenti con hook e CTA performanti.</p>
+      <div class="service-hover-effect"></div>
+    </div>
+  </div>
+
+  <div class="mission-cta">
+    <div class="mission-content">
+      <h3>La mia <span>Missione</span></h3>
+      <p>Scegli UGCly oggi, per avere Creatività domani!</p>
+    </div>
+    <a href="#" class="modern-cta">
+      Scopri di più
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+
+    <!-- PROGETTI -->
+<div class="section-wrapper">
+    <section class="projects" id="projects-section">
+        <div class="projects-contents">
+          <h1 class="youtube-cover"><span>Youtube</span> Cover</h1>
+      
+          <!-- COVER YOUTUBE -->
+          <div class="container">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+      
+            <div class="cards" role="region" aria-label="Galleria cover YouTube">
+              <!-- Card Immagini -->
+              <label class="card" for="item-1" id="song-1">
+                <img draggable="false" src="./images/COVER/COVER VIDEO (2).jpg" alt="Cover 1" loading="lazy">
+              </label>
+              <label class="card" for="item-2" id="song-2">
+                <img draggable="false" src="./images/COVER/2-min.png" alt="Cover 2" loading="lazy">
+              </label>
+              <label class="card" for="item-3" id="song-3">
+                <img draggable="false" src="./images/COVER/HOW to make a Lil Baby TYPE BEAT.png" alt="Cover 3" loading="lazy">
+              </label>
+      
+              <!-- Frecce Integrate -->
+              <div class="arrows">
+                <button id="prev" aria-label="Previous image">&#10094;</button>
+                <button id="next" aria-label="Next image">&#10095;</button>
+              </div>
+      
+              <!-- Pulsante Details Integrato -->
+              <div class="details-button">
+                <button class="btn" aria-label="View details">Details</button>
+              </div>
+            </div>
+          </div>
+      </section>
+
+            
+            
+            <!-- MODAL PER IMMAGINI CAROSELLO -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImg">
+            </div>
+
+            <!-- MODAL PER PULSANTE DETAILS -->
+            <div id="detailsModal" class="modal text-modal">
+                <span class="close">&times;</span>
+                <div class="modal-text-content">
+                  <h3>YouTube Cover</h3>
+                  <!-- Inserisci qui il tuo testo -->
+                  <p>Each YouTube cover I design is a strategic blend of visual impact and clear communication. 
+                    My goal is to grab attention in just a few seconds, instantly conveying the essence of the video and encouraging viewers to click. 
+                    I work with creators across various industries — from entertainment to education — developing a visual style that aligns with their brand and performs well within the platform’s algorithm. 
+                    Every project is the result of close collaboration, where design, color, and typography come together to turn a thumbnail into a promise.</p>
+                </div>
+              </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
