@@ -21,28 +21,11 @@ main {
   margin: auto;
 }
   
-  .background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  
-  .background-container {
-    background-image: url('/images/Background-Projects.jpg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-
   /* CONTENT BLOCK */
 
   .content-block {
     background: rgba(255, 255, 255, 0.4); /* Sfondo leggermente trasparente */
-    background-image: linear-gradient(145deg, rgba(255, 255, 255), rgba(235, 235, 235)); /* Aggiungi sfumatura */
+    background-image: linear-gradient(145deg, rgb(229, 227, 227), rgba(221, 219, 219, 0.598)); /* Aggiungi sfumatura */padding: 2rem;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);

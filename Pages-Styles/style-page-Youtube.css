@@ -24,25 +24,12 @@ main {
   margin: auto;
 }
 
-.background-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/images/Background-Projects.jpg.png');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
-
-
 
 /* SEZIONE */
 section {
   margin-bottom: 2rem;
   background: rgba(255, 255, 255); /* Sfondo leggermente trasparente */
-  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)); /* Aggiungi sfumatura */
+  background-image: linear-gradient(145deg, rgb(229, 227, 227), rgba(221, 219, 219, 0.598)); /* Aggiungi sfumatura */padding: 2rem;
   margin-bottom: 4rem; /* Maggiore spazio tra le sezioni */
   padding: 1rem 3rem 3rem 3rem; /* Più padding per dare un po' di respiro */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
