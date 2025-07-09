@@ -52,13 +52,29 @@ main {
     animation: titleEntrance 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
     transition: color 0.3s ease;
   }
-  
+
+
   .copy-subtitle {
     text-align: center;
     font-size: 1.3rem;
     font-weight: 200;
     color: #7f8c8d;
     margin-bottom: 2rem;
+  }
+
+  
+    @media (max-width: 1024px) {
+    .copy-title{
+      font-size: 2.5rem;
+    }
+    .copy-subtitle {
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;;
+    }
+
   }
   
   .copy-intro,
@@ -77,6 +93,19 @@ main {
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
   }
+
+  @media (max-width: 1024px) {
+    .copy-benefits li{ 
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+
+    }
+
+  }
+
   
   .copy-cards {
     display: grid;

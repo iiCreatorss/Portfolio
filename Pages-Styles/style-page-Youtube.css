@@ -80,6 +80,19 @@ section:hover {
 }
 
 
+  @media (max-width: 1024px) {
+    .editing-video,
+    .youtube-cover {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+  }
+
+
 /* Animazione di ingresso senza glow */
 @keyframes titleEntrance {
   0% {
