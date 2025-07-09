@@ -270,12 +270,30 @@ main {
     .carousel-section {
       max-width: 900px;
     }
+
+    .carousel-card p {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 2px 0; /* Aggiungi margini consistenti */
+
+    
+}
+
 }
   
 @media (max-width: 900px) {
     .carousel-card {
       width: calc(50% - 30px);
     }
+    .carousel-card p {
+    font-size: 0.6rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 2px 0; /* Aggiungi margini consistenti */
+
+    
+}
 }
   
 @media (max-width: 768px) {
