@@ -144,6 +144,17 @@ section:hover {
   }
 }
 
+@media (max-width: 1200px) {
+
+  .carousel-track img {
+  width: 320px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+}
+
 /* Lightbox full screen */
 .lightbox {
   display: none;
