@@ -1,0 +1,143 @@
+/* Reset di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo della pagina */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: #1e3a8a; /* blu principale */
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 5px 20px 20px;
+  border-bottom: 2px solid #1e3a8a;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+/* Galleria immagini */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 30px 20px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Immagini */
+.gallery img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9; /* mantiene proporzione uniforme */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* Tablet: 2 colonne */
+@media (min-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 colonne */
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* PULSANTE MENU' */
+
+
+.fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+}
+
+.fab-button {
+  background-color: #3498db;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.fab-button.open {
+  transform: rotate(45deg);
+}
+
+.fab-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  gap: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fab-menu.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fab-item {
+  background-color: #ffffff;
+  color: #3498db;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.fab-item:hover {
+  background-color: #ecf0f1;
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.4); /* Sfondo leggermente trasparente */
+  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(235, 235, 235, 0.8)); /* Aggiungi sfumatura */padding: 2rem;
+  color: black;
+  min-height: 50px;
+}

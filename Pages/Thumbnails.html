@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavori</title>
+  <link rel="stylesheet" href="../Pages-Styles/style-thumbnails.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="title">Lavori</h1>
+  </header>
+
+  <main class="gallery">
+    <!-- Aggiungi qui le tue immagini -->
+        <img src="../images/COVER/1.jpg" alt="Copertina 1" draggable="false">
+        <img src="../images/COVER/2.png" alt="Copertina 2" draggable="false">
+        <img src="../images/COVER/3.jpg" alt="Copertina 3" draggable="false">
+        <img src="../images/COVER/4.png" alt="Copertina 4" draggable="false">
+        <img src="../images/COVER/5.png" alt="Copertina 5" draggable="false">
+        <img src="../images/COVER/6.png" alt="Copertina 6" draggable="false">
+    <!-- Puoi aggiungere altre immagini qui -->
+
+
+
+    <!-- HTML PULSANTE -->
+
+    <div class="fab-container">
+      <button class="fab-button" id="fab-main">+</button>
+      <div class="fab-menu" id="fab-menu">
+        <a href="../index.html" class="fab-item" title="Home">
+          🏠
+        </a>
+        <a href="https://wa.me/+393884771675" target="_blank" class="fab-item" title="Chat WhatsApp">
+          💬
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 iiCreators. Tutti i diritti riservati.</p>
+  </footer>
+
+    
+    <script>
+    const fabMain = document.getElementById('fab-main');
+    const fabMenu = document.getElementById('fab-menu');
+  
+    fabMain.addEventListener('click', () => {
+      fabMain.classList.toggle('open');
+      fabMenu.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
