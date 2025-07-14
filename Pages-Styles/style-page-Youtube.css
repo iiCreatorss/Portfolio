@@ -205,6 +205,17 @@ section:hover {
 
 
 
+.Work-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #2980b9;
+  color: white;
+  text-align: center;
+  display: inline-block;  /* ✅ Cambiato */
+  cursor: pointer;
+}
+
 
 /* PULSANTE MENU' */
 
