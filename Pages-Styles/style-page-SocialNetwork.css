@@ -309,7 +309,7 @@ main {
 @media (max-width: 768px) {
     .carousel-card {
       width: 100%;
-      max-width: 2400px;
+      max-width: 240px;
     }
 }
   
