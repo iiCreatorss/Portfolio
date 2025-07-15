@@ -31,7 +31,6 @@ section {
   background: rgba(255, 255, 255); /* Sfondo leggermente trasparente */
   background-image: linear-gradient(145deg, rgb(229, 227, 227), rgba(221, 219, 219, 0.598)); /* Aggiungi sfumatura */padding: 2rem;
   margin-bottom: 4rem; /* Maggiore spazio tra le sezioni */
-  padding: 1rem 3rem 3rem 3rem; /* Più padding per dare un po' di respiro */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
   
@@ -83,7 +82,7 @@ section:hover {
   @media (max-width: 1024px) {
     .editing-video,
     .youtube-cover {
-      font-size: 2.8rem;
+      font-size: 2.7rem;
     }
 
     p {

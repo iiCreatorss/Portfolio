@@ -309,7 +309,7 @@ main {
 @media (max-width: 768px) {
     .carousel-card {
       width: 100%;
-      max-width: 400px;
+      max-width: 2400px;
     }
 }
   
@@ -334,7 +334,7 @@ main {
 
 
   .pricing-section {
-    margin-bottom: 4rem;
+    margin-bottom: rem;
     padding: 0 1rem;
     display: flex;
     justify-content: center;
