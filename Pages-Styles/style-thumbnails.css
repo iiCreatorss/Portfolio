@@ -9,19 +9,19 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: white;
-  color: #1e3a8a; /* blu principale */
+  color: #3498db; /* blu principale */
 }
 
 /* Header */
 .header {
   text-align: center;
   padding: 5px 20px 20px;
-  border-bottom: 2px solid #1e3a8a;
+  border-bottom: 2px solid #3498db;
 }
 
 .title {
   font-size: 2.5rem;
-  color: #1e3a8a;
+  color: #3498db;
   font-weight: bold;
 }
 
